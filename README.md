@@ -1,3 +1,9 @@
+> **NOTE**: If you are having issues with skhd, or are looking for feature expansion and future development,  
+you may want to check out [this backwards compatible skhd-port](https://github.com/jackielii/skhd.zig) written in Zig by [Jackie Li](https://github.com/jackielii).  
+(I am not personally involved in this re-write.)
+
+**This repository is in maintenance mode; only critical issues that affect the core functionality of the software will be taken care of.** 
+
 **skhd** is a simple hotkey daemon for macOS that focuses on responsiveness and performance.
 Hotkeys are defined in a text file through a simple DSL. **skhd** is able to hotload its config file, meaning that hotkeys can be edited and updated live while **skhd** is running.
 
@@ -30,24 +36,24 @@ After access has been granted, the application must be restarted.
 
 Requires xcode-8 command-line tools.
 
-      brew install koekeishiya/formulae/skhd
+      brew install asmvik/formulae/skhd
       skhd --start-service
 
 **Source**:
 
 Requires xcode-8 command-line tools.
 
-      git clone https://github.com/koekeishiya/skhd
+      git clone https://github.com/asmvik/skhd
       make install      # release version
       make              # debug version
 
 ### Usage
 
 ```
---install-service: Install launchd service file into ~/Library/LaunchAgents/com.koekeishiya.skhd.plist
+--install-service: Install launchd service file into ~/Library/LaunchAgents/com.asmvik.skhd.plist
     skhd --install-service
 
---uninstall-service: Remove launchd service file ~/Library/LaunchAgents/com.koekeishiya.skhd.plist
+--uninstall-service: Remove launchd service file ~/Library/LaunchAgents/com.asmvik.skhd.plist
     skhd --uninstall-service
 
 --start-service: Run skhd as a service through launchd
@@ -97,9 +103,9 @@ The default configuration file is located at one of the following places (in ord
 
 A different location can be specified with the *--config | -c* argument.
 
-A sample config is available [here](https://github.com/koekeishiya/skhd/blob/master/examples/skhdrc)
+A sample config is available [here](https://github.com/asmvik/skhd/blob/master/examples/skhdrc)
 
-A list of all built-in modifier and literal keywords can be found [here](https://github.com/koekeishiya/skhd/issues/1)
+A list of all built-in modifier and literal keywords can be found [here](https://github.com/asmvik/skhd/issues/1)
 
 A hotkey is written according to the following rules:
 ```
